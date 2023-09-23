@@ -16,11 +16,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-
-
-
-
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -34,8 +29,6 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    # 'rest_auth.registration',
-    # 'rest_framework.authtoken',
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.facebook',
 ]
@@ -93,7 +86,6 @@ DATABASES = {
 }
 
 
-
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
@@ -111,9 +103,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
-
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
@@ -152,13 +141,17 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
-        'SCOPE' :[
+        'SCOPE': [
             'profile',
             'email'
         ],
-        'AUTH_PARMS' : {
-            'access_type' : 'online'
+        'AUTH_PARMS': {
+            'access_type': 'online'
         }
     }
 }
-# ACCOUNT_DEFAULT_HTTP_PROTOCOL='https' Enable this when working facebook login. Cad facebook need https always . so in the time of testing you need to enable it. 
+
+# Enable this when working facebook login. Cad facebook need https always .
+# so in the time of testing you need to enable it.
+# ACCOUNT_DEFAULT_HTTP_PROTOCOL='https'
+
